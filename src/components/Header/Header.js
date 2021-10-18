@@ -1,28 +1,25 @@
 import './Header.css';
-import {
-    useLocation,
-    Link,
-    NavLink,
-} from 'react-router-dom';
+import { useLocation, Link, NavLink } from 'react-router-dom';
 import logo from '../../images/logo.svg';
 import profileIcon from '../../images/profile-icon.svg';
 import { useState, useEffect } from 'react';
 import BurgerMenu from '../BurgerMenu/BurgerMenu';
 import { useSelector } from 'react-redux';
 
-function Header({ isMobile }) {
+function Header() {
     const location = useLocation();
     const [color, setColor] = useState('');
     const [textColor, setTextColor] = useState('');
-    const loggedIn = useSelector(state => state.user.loggedIn)
+    const loggedIn = useSelector(state => state.user.loggedIn);
+    const isMobile = useSelector(state => state.app.isMobile);
 
     useEffect(() => {
         if (location.pathname === '/') {
             setColor('#5C5C5C');
-            setTextColor('white')
+            setTextColor('white');
         } else {
             setColor('white');
-            setTextColor('black')
+            setTextColor('black');
         }
     }, [location.pathname, color]);
 

@@ -3,6 +3,7 @@ import {
     CLEAR_RESPONSE_MESSAGE,
     DISABLE_LOADER,
     ENABLE_LOADER,
+    IS_MOBILE,
     SET_CARDS_IN_ROW,
     SET_NUMBER_OF_CARDS,
     SET_RESPONSE_MESSAGE,
@@ -12,6 +13,7 @@ const initialState = {
     isLoading: false,
     resMessage: '',
     toggle: false,
+    isMobile: false,
     numberOfCards: 0,
     cardInRow: 0,
 };
@@ -52,6 +54,11 @@ function appReducer(state = initialState, action) {
             return {
                 ...state,
                 cardsInRow: action.payload,
+            };
+        case IS_MOBILE:
+            return {
+                ...state,
+                isMobile: action.payload,
             };
         default:
             return state;

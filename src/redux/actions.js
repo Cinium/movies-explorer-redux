@@ -18,6 +18,7 @@ import {
     SET_CARDS_IN_ROW,
     DELETE_MOVIE,
     CHANGE_TOGGLE_STATE,
+    IS_MOBILE,
 } from './types';
 
 export function fetchSavedMovies() {
@@ -108,7 +109,8 @@ export function saveMovie(movie) {
             const movie = await res.json();
             dispatch({ type: SAVE_MOVIE, payload: movie });
 
-            let newArr = JSON.parse(localStorage.getItem('savedMovies')) || [];
+            let newArr =
+                JSON.parse(localStorage.getItem('savedMovies')) || [];
             newArr.push(movie);
             localStorage.setItem('savedMovies', JSON.stringify(newArr));
         } catch (e) {
@@ -282,6 +284,13 @@ export function setCardsInRow(num) {
 export function changeToggleState(newState) {
     return {
         type: CHANGE_TOGGLE_STATE,
-        payload: newState
-    }
+        payload: newState,
+    };
+}
+
+export function setIsMobile(newState) {
+    return {
+        type: IS_MOBILE,
+        payload: newState,
+    };
 }

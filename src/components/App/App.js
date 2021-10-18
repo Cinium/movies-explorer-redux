@@ -27,14 +27,15 @@ import {
     setSavedMovies,
     showLoader,
     setNumberOfCards,
-    setCardsInRow
+    setCardsInRow,
+    setIsMobile,
 } from '../../redux/actions';
 
 function App() {
-    const [isMobile, setIsMobile] = useState(false);
     const [errorState, setErrorState] = useState(false);
-    
+
     const savedMovies = useSelector(state => state.movies.savedMovies);
+    const isMobile = useSelector(state => state.app.isMobile);
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -50,18 +51,18 @@ function App() {
         if (window.innerWidth >= SCREEN_SIZE.BIG) {
             dispatch(setCardsInRow(MORE_CARDS.MANY));
             dispatch(setNumberOfCards(CARDS_FOR.BIG_SCREEN));
-            setIsMobile(false);
+            dispatch(setIsMobile(false));
         } else if (
             SCREEN_SIZE.MIDDLE <= window.innerWidth &&
             window.innerWidth < SCREEN_SIZE.BIG
         ) {
             dispatch(setCardsInRow(MORE_CARDS.FEW));
             dispatch(setNumberOfCards(CARDS_FOR.MIDDLE_SCREEN));
-            setIsMobile(false);
+            dispatch(setIsMobile(false));
         } else if (window.innerWidth < SCREEN_SIZE.MIDDLE) {
             dispatch(setCardsInRow(MORE_CARDS.FEW));
             dispatch(setNumberOfCards(CARDS_FOR.MOBILE));
-            setIsMobile(true);
+            dispatch(setIsMobile(true));
         }
     }
 
@@ -119,7 +120,7 @@ function App() {
                 exact
                 path={['/', '/profile', '/saved-movies', '/movies']}
             >
-                <Header isMobile={isMobile} />
+                <Header />
             </Route>
 
             <Switch>
