@@ -29,9 +29,7 @@ function SavedMovies({
         if (toggle) {
             setCardsToShow(
                 savedMovies.filter(m => {
-                    if (m.duration > DURATION_OF_SHORTS) {
-                        return false;
-                    }
+                    if (m.duration > DURATION_OF_SHORTS) return false;
                     return true;
                 })
             );

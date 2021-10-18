@@ -17,6 +17,7 @@ function Techs() {
                 <li className="techs__list-item">Git</li>
                 <li className="techs__list-item">Express.js</li>
                 <li className="techs__list-item">mongoDB</li>
+                <li className="techs__list-item">Redux</li>
             </ul>
         </div>
     );
