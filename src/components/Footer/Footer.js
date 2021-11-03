@@ -34,26 +34,6 @@ function Footer() {
                             Яндекс.Практикум
                         </a>
                     </li>
-                    <li className="footer__links-li">
-                        <a
-                            className="footer__link button"
-                            target="_blank"
-                            rel="noreferrer"
-                            href="https://github.com/"
-                        >
-                            Github
-                        </a>
-                    </li>
-                    <li className="footer__links-li">
-                        <a
-                            className="footer__link button"
-                            target="_blank"
-                            rel="noreferrer"
-                            href="https://facebook.com/"
-                        >
-                            Facebook
-                        </a>
-                    </li>
                 </ul>
             </div>
         </div>

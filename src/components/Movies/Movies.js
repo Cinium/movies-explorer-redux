@@ -48,6 +48,8 @@ function Movies({
         setCardsToShow([...cardsToShow, ...slicedPosts]);
     }
 
+    console.log(movies)
+
     return (
         <div className="movies">
             <SearchForm searchMovies={searchMainMovies} />

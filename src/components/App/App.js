@@ -36,14 +36,15 @@ function App() {
 
     const savedMovies = useSelector(state => state.movies.savedMovies);
     const isMobile = useSelector(state => state.app.isMobile);
+    const loggedIn = useSelector(state => state.user.loggedIn);
     const dispatch = useDispatch();
 
     useEffect(() => {
         checkViewWidth();
         window.addEventListener('resize', checkViewWidth);
 
-        dispatch(fetchSavedMovies());
-
+        if (loggedIn) dispatch(fetchSavedMovies());
+        
         localStorage.setItem('toggleState', JSON.stringify(false));
     }, []);
 

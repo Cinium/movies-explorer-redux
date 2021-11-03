@@ -9,7 +9,7 @@ let savedMovies = JSON.parse(localStorage.getItem('savedMovies'));
 let movies = JSON.parse(localStorage.getItem('mainMovies'));
 
 const intialState = {
-    movies: movies ? movies : [],
+    movies: movies ? movies : null,
     savedMovies: savedMovies ? savedMovies : [],
 };
 
