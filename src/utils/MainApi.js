@@ -123,10 +123,12 @@ class MainApi {
     }
 }
 
-const mainApi = new MainApi(
-    `${window.location.protocol}${
-        process.env.REACT_APP_API_URL || '//localhost:8000'
-    }`
-);
+// const mainApi = new MainApi(
+//     `${window.location.protocol}${
+//         process.env.REACT_APP_API_URL || '//localhost:8000'
+//     }`
+// );
+
+const mainApi = new MainApi('api.domain404.nomoredomains.club')
 
 export default mainApi;
