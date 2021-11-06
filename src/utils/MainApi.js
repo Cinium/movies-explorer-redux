@@ -129,6 +129,6 @@ class MainApi {
 //     }`
 // );
 
-const mainApi = new MainApi('api.domain404.nomoredomains.club')
+const mainApi = new MainApi(`${window.location.protocol}//api.domain404.nomoredomains.club`)
 
 export default mainApi;
