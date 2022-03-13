@@ -129,6 +129,7 @@ class MainApi {
 //     }`
 // );
 
-const mainApi = new MainApi(`${window.location.protocol}//api.domain404.nomoredomains.club`)
+// const mainApi = new MainApi(`${window.location.protocol}//api.domain404.nomoredomains.club`)
+const mainApi = new MainApi(`${window.location.protocol}//praktikum-movies-explorer-api.herokuapp.com/`)
 
 export default mainApi;
